@@ -8,15 +8,30 @@ The Salesforce Developer Experience (SFDX) starts with source code living in you
 
 Our first goal is to set up a developer workspace for us to use to modify our application. It starts by cloning the repository. Use the command ...
 
-    git clone https://github.com/forcedotcom/sfdx-simple.git
+    git clone https://github.com/pchittum/sfdx-greenfield-template.git
 
 … or ...
 
-    git clone git@github.com:forcedotcom/sfdx-simple.git
+    git clone git@github.com:pchittum/sfdx-greenfield-template.git
 
 … to clone the repository. Then, open the directory.
 
     cd sfdx-simple
+
+- Authorize environment hub
+
+    heroku force:org:authorize
+
+- create a scratch org and open it
+
+    heroku force:org:create -f config/workspace-scratch-def.json
+    heroku force:org:open
+
+- create something in metadata then pull it to the local repo
+
+    heroku force:src:pull
+
+
     
 ## Resources
 
