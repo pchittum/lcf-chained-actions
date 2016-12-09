@@ -1,21 +1,27 @@
-<aura:component controller="AccountContactController" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+<aura:component controller="AccountContactController" implements="force:appHostable,flexipage:availableForAllPageTypes"
+	access="global">
 
-    <aura:attribute name="account" type="Account" default="{'sobjectType':'Account'}" />
-    <aura:attribute name="contact" type="Contacts" default="{'sobjectType':'Contact'}" />
+	<aura:attribute name="account" type="Account"
+		default="{'sobjectType':'Account'}" />
+	<aura:attribute name="contact" type="Contact"
+		default="{'sobjectType':'Contact'}" />
 
-    <div>
-        Account:
-        <p>
-            <ui:outputText value="Name"></ui:outputText>
-            <ui:inputText value="{!account.Name}"></ui:inputText>
-        </p>
-    </div>
-    <div>
-        Contact:
-        <p>
-            <ui:outputText value="Last Name"></ui:outputText>
-            <ui:inputText value="{!contact.LastName}"></ui:inputText>
-        </p>
-    </div>
-    <ui:button label="Save" press="{!c.doSave}"></ui:button>
+	<div>
+		Account:
+		<p>
+			<ui:outputText value="Name"></ui:outputText>
+			<ui:inputText value="{!v.account.Name}"></ui:inputText>
+		</p>
+	</div>
+	<div>
+		Contact:
+		<p>
+			<ui:outputText value="Last Name"></ui:outputText>
+			<ui:inputText value="{!v.contact.LastName}"></ui:inputText>
+		</p>
+	</div>
+	<ui:button label="Save" press="{!c.doSave}"></ui:button>
+    
+    {!v.Account.Id}
+
 </aura:component>

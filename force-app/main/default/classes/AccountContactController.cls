@@ -11,6 +11,7 @@ public class AccountContactController {
     
     @AuraEnabled
     public static Contact createContact(Contact cont){
+    	System.debug(cont);
         insert cont; 
         
         return cont;
